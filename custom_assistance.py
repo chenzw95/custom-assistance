@@ -24,7 +24,7 @@ class Assistance:
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Is it safe to update?", color=discord.Color.blue())
         embed.description = "In general, it is safe to update if you have installed A9LH/CFW."
-        embed.add_field(name="With CFW", value="NTR streaming does not work on 11.4. Before performing the system update, first update to the latest normal version of Luma3DS, either via the Luma Updater or by [manually downloading Luma3DS](https://github.com/AuroraWright/Luma3DS/releases) and replacing arm9loaderhax.bin on the SD card.\nYou should also repeat [section VIII of the guide's last page](https://3ds.guide/installing-arm9loaderhax#section-viii---ctrnand-luma3ds) to ensure SD-less boot will work properly.")
+        embed.add_field(name="With CFW", value="NTR streaming does not work on 11.4. Before performing the system update, first update to the latest normal version of Luma3DS, either via the Luma Updater or by [manually downloading Luma3DS](https://github.com/AuroraWright/Luma3DS/releases) and replacing arm9loaderhax.bin on the SD card.\nYou should also repeat [section IX of the guide's last page](https://3ds.guide/installing-arm9loaderhax#section-ix---ctrnand-luma3ds) to ensure SD-less boot will work properly.")
         embed.add_field(name="Without CFW (stock firmware)", value="You are advised to consider installing CFW. For now, 11.3 is the latest firmware version where CFW installation is possible. soundhax has been patched in 11.4, and the Homebrew Launcher does not work on the O3DS at all.")
         embed.add_field(name="If you do not want to update", value="You can run [the latest version of ctr-httpwn](https://github.com/yellows8/ctr-httpwn/releases) from the Homebrew Launcher to bypass most update requirements.")
         await self.bot.say("", embed=embed)
@@ -36,7 +36,7 @@ class Assistance:
         embed.description = "In general, it is safe to update if you have installed A9LH/CFW. Note, however, that ctr-httpwn has been patched in 11.4."
         embed.add_field(name="O3DS/2DS", value="There are no issues with updating to 11.4.")
         embed.add_field(name="N3DS", value="NTR streaming does not work on 11.4 for now.")
-        embed.add_field(name="How to update", value="Update to the latest normal version of Luma3DS first, either via the Luma Updater or by [manually downloading Luma3DS](https://github.com/AuroraWright/Luma3DS/releases) and replacing arm9loaderhax.bin on the SD card.\nYou should also repeat [section VIII of the guide's last page](https://3ds.guide/installing-arm9loaderhax#section-viii---ctrnand-luma3ds) to ensure SD-less boot will work properly.")
+        embed.add_field(name="How to update", value="Update to the latest normal version of Luma3DS first, either via the Luma Updater or by [manually downloading Luma3DS](https://github.com/AuroraWright/Luma3DS/releases) and replacing arm9loaderhax.bin on the SD card.\nYou should also repeat [section IX of the guide's last page](https://3ds.guide/installing-arm9loaderhax#section-ix---ctrnand-luma3ds) to ensure SD-less boot will work properly.")
         embed.add_field(name="If you still need the Homebrew Launcher", value="Most homebrew apps are available as CIAs. If you still need HBL, refer to the pinned messages in <#196635695958196224> and copy the payload file for your console to the `hblauncherloader` folder.")
         await self.bot.say("", embed=embed)
 
