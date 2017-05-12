@@ -17,7 +17,7 @@ class Assistance:
     @commands.command(pass_context=True)
     async def lumacfg(self, ctx):
         await self.bot.delete_message(ctx.message)
-        await self.simple_embed("• Autoboot SysNAND\n• Use SysNAND FIRM if booting with R\n• Show NAND or user string in System Settings", title="Options to enable in Luma3DS configuration")
+        await self.simple_embed("• Autoboot SysNAND\n• Use SysNAND FIRM if booting with R\n• Show NAND or user string in System Settings\n\nIf you are configuring Luma3DS while the SD card is **not inserted** (CTRNAND Luma3DS), it is normal if you cannot see some of the above options.", title="Options to enable in Luma3DS configuration")
 
     @commands.command(pass_context=True)
     async def updateadv(self, ctx):
