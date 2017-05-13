@@ -42,6 +42,13 @@ class Assistance:
         embed.add_field(name="How to update", value="Update to the latest normal version of Luma3DS first, either via the Luma Updater or by [manually downloading Luma3DS](https://github.com/AuroraWright/Luma3DS/releases) and replacing arm9loaderhax.bin on the SD card.\nYou should also repeat [section IX of the guide's last page](https://3ds.guide/installing-arm9loaderhax#section-ix---ctrnand-luma3ds) to ensure SD-less boot will work properly.")
         await self.bot.say("", embed=embed)
 
+    @commands.command(pass_context=True)
+    async def safe(self, ctx):
+        """Is it really safe?"""
+        await self.bot.delete_message(ctx.message)
+        embed = discord.Embed().set_image(url="http://i.imgur.com/X7XzvzA.png")
+        await self.bot.say("", embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Assistance(bot))
