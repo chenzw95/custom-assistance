@@ -16,11 +16,13 @@ class Assistance:
 
     @commands.command(pass_context=True)
     async def lumacfg(self, ctx):
+        """Lists options to enable in Luma3DS configuration."""
         await self.bot.delete_message(ctx.message)
         await self.simple_embed("• Autoboot SysNAND\n• Use SysNAND FIRM if booting with R\n• Show NAND or user string in System Settings\n\nIf you are configuring Luma3DS while the SD card is **not inserted** (CTRNAND Luma3DS), it is normal if you cannot see some of the above options.", title="Options to enable in Luma3DS configuration")
 
     @commands.command(pass_context=True)
     async def updateadv(self, ctx):
+        """Firmware update advisory (generic)"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Is it safe to update?", color=discord.Color.blue())
         embed.description = "In general, it is safe to update if you have installed A9LH/CFW."
@@ -31,6 +33,7 @@ class Assistance:
 
     @commands.command(pass_context=True)
     async def updatecfw(self, ctx):
+        """Firmware update advisory (A9LH)"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Is it safe to update if I have installed A9LH/CFW already?", color=discord.Color.blue())
         embed.description = "In general, it is safe to update if you have installed A9LH/CFW. Note, however, that ctr-httpwn has been patched in 11.4."
