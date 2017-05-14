@@ -52,6 +52,7 @@ class Assistance:
     @commands.command(pass_context=True)
     async def emptysd(self, ctx):
         """Steps to repeat if SD card has been formatted"""
+        await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Blank SD card?", color=discord.Color.red())
         embed.description = "If you have installed CFW and formatted your SD card, repeat sections I, III, V, VI and VIII of [Installing arm9loaderhax](https://3ds.guide/installing-arm9loaderhax)."
         await self.bot.say("", embed=embed)
