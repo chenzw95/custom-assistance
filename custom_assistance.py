@@ -50,6 +50,16 @@ class Assistance:
         embed.add_field(name="arm9loaderhax (deprecated)", value="Repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup), but download [Luma3DS v7.0.5](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5) instead of the latest release. When prompted to copy `boot.firm`, copy `arm9loaderhax.bin` instead.\n**You are advised to [update to boot9strap](https://3ds.guide/updating-to-boot9strap).**")
         await self.bot.say("", embed=embed)
 
+    @commands.command(pass_context=True)
+    async def b9s(self, ctx):
+        """boot9strap information"""
+        await self.bot.delete_message(ctx.message)
+        embed = discord.Embed(title="What is boot9strap?", color=discord.Color.blue())
+        embed.description = "boot9strap is the successor to arm9loaderhax. Luma3DS has already discontinued support for arm9loaderhax, and will require boot9strap from Luma3DS 7.1 onwards."
+        embed.add_field(name="But I have been hearing this thing about sighax!", value="sighax and boot9strap work in similar ways, but the ordinary end-user **should not** attempt to use the sighax installer.")
+        embed.add_field(name="How do I switch from A9LH to B9S?", value="Follow the guide to [update to boot9strap](https://3ds.guide/updating-to-boot9strap).")
+        embed.add_field(name="How do I install B9S from stock?", value="Follow [the guide](https://3ds.guide).")
+        await self.bot.say("", embed=embed)
 
 def setup(bot):
     bot.add_cog(Assistance(bot))
