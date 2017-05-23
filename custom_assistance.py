@@ -71,6 +71,16 @@ class Assistance:
         embed.add_field(name="Can you inform me when such an exploit is available?", value="You should either refer to <#225556031428755456> or [/r/3dshacks](https://www.reddit.com/r/3dshacks).")
         await self.bot.say("", embed=embed)
 
+    @commands.command(pass_context=True)
+    async def hardmod(self, ctx):
+        """Hardmod advisory"""
+        await self.bot.delete_message(ctx.message)
+        embed = discord.Embed(title="What is a hardmod?", color=discord.Color.red())
+        embed.description = "A hardmod involves soldering wires to specific points on the 3DS circuit board in order to read and write directly to the NAND."
+        embed.add_field(name="How do I do it?", value="You should refer to the pinned messages in <#233002779717795850>.")
+        embed.add_field(name="DANGER", value="Prior soldering experience is **essential**. If you make a mistake, you risk **breaking your device PERMANENTLY**.")
+        await self.bot.say("", embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Assistance(bot))
