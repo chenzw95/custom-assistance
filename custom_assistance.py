@@ -46,8 +46,8 @@ class Assistance:
         """Steps to repeat if SD card has been formatted"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Blank SD card?", color=discord.Color.red())
-        embed.add_field(name="boot9strap", value="Repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup).")
-        embed.add_field(name="arm9loaderhax (deprecated)", value="Repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup), but download [Luma3DS v7.0.5](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5) instead of the latest release. When prompted to copy `boot.firm`, copy `arm9loaderhax.bin` instead.\n**You are advised to [update to boot9strap](https://3ds.guide/updating-to-boot9strap).**")
+        embed.add_field(name="boot9strap", value="Download the [latest version of Luma3DS](https://github.com/AuroraWright/Luma3DS/releases/latest), copy `boot.firm` to the root of the SD card, and repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup).")
+        embed.add_field(name="arm9loaderhax (deprecated)", value="Download [Luma3DS v7.0.5](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5), copy `arm9loaderhax.bin` to the root of the SD card, and repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup).\n**You are advised to [update to boot9strap](https://3ds.guide/updating-to-boot9strap).**")
         await self.bot.say("", embed=embed)
 
     @commands.command(pass_context=True)
