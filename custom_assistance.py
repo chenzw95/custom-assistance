@@ -29,9 +29,8 @@ class Assistance:
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Is it safe to update if I have installed CFW already?", color=discord.Color.blue())
         embed.description = "In general, it is safe to update if you have installed CFW. Note, however, that ctr-httpwn has been patched in 11.4."
-        embed.add_field(name="boot9strap", value="Update to the latest normal version of Luma3DS first, either via the Luma Updater or by [manually downloading Luma3DS](https://github.com/AuroraWright/Luma3DS/releases) and replacing `boot.firm` on the SD card.\nYou should also repeat [section VIII of the guide's last page](https://3ds.guide/finalizing-setup#section-viii---ctrnand-luma3ds) to ensure SD-less boot will work properly.")
-        embed.add_field(name="arm9loaderhax (deprecated)", value="You should [update to boot9strap](https://3ds.guide/updating-to-boot9strap) first.")
-        embed.add_field(name="Additional notes", value="If you still need the Homebrew Launcher on O3DS/2DS, refer to the pinned messages in <#196635695958196224> and copy the payload file for your console to the `hblauncherloader` folder.")
+        embed.add_field(name="boot9strap", value="Download the [latest compatible version](https://cdn.discordapp.com/attachments/196635695958196224/321169284124508161/compatibility_chart.png) of Luma3DS [manually from GitHub](https://github.com/AuroraWright/Luma3DS/releases) and replace `boot.firm` on the SD card.\nYou should also repeat [section VIII of the guide's last page](https://3ds.guide/finalizing-setup#section-vi---ctrnand-luma3ds) to ensure SD-less boot will work properly.")
+        embed.add_field(name="arm9loaderhax (deprecated)", value="You should [update to boot9strap](https://3ds.guide/a9lh-to-b9s) first.")
         await self.bot.say("", embed=embed)
 
     @commands.command(pass_context=True)
@@ -46,8 +45,8 @@ class Assistance:
         """Steps to repeat if SD card has been formatted"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Blank SD card?", color=discord.Color.red())
-        embed.add_field(name="boot9strap", value="Download the [latest version of Luma3DS](https://github.com/AuroraWright/Luma3DS/releases/latest), copy `boot.firm` to the root of the SD card, and repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup).")
-        embed.add_field(name="arm9loaderhax (deprecated)", value="Download [Luma3DS v7.0.5](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5), copy `arm9loaderhax.bin` to the root of the SD card, and repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup).\n**You are advised to [update to boot9strap](https://3ds.guide/updating-to-boot9strap).**")
+        embed.add_field(name="boot9strap", value="Download the [latest compatible version](https://cdn.discordapp.com/attachments/196635695958196224/321169284124508161/compatibility_chart.png) of Luma3DS [manually from GitHub](https://github.com/AuroraWright/Luma3DS/releases), and copy `boot.firm` to the root of the SD card, and repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup).")
+        embed.add_field(name="arm9loaderhax (deprecated)", value="Download [Luma3DS v7.0.5](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5), copy `arm9loaderhax.bin` to the root of the SD card, and repeat the steps listed on [Finalizing setup](https://3ds.guide/finalizing-setup).\n**You are advised to [update to boot9strap](https://3ds.guide/a9lh-to-b9s).**")
         await self.bot.say("", embed=embed)
 
     @commands.command(pass_context=True)
@@ -57,7 +56,7 @@ class Assistance:
         embed = discord.Embed(title="What is boot9strap?", color=discord.Color.blue())
         embed.description = "boot9strap is the successor to arm9loaderhax. Luma3DS has already discontinued support for arm9loaderhax, and will require boot9strap from Luma3DS 7.1 onwards."
         embed.add_field(name="But I have been hearing this thing about sighax!", value="sighax and boot9strap work in similar ways, but the ordinary end-user **should not** attempt to use the sighax installer.")
-        embed.add_field(name="How do I switch from A9LH to B9S?", value="Follow the guide to [update to boot9strap](https://3ds.guide/updating-to-boot9strap).")
+        embed.add_field(name="How do I switch from A9LH to B9S?", value="Follow the guide to [update to boot9strap](https://3ds.guide/a9lh-to-b9s).")
         embed.add_field(name="How do I install B9S from stock?", value="Follow [the guide](https://3ds.guide).")
         await self.bot.say("", embed=embed)
 
@@ -90,6 +89,16 @@ class Assistance:
         embed.add_field(name="What happens if I have been banned?", value="As with all previous console bans, affected consoles will get error 002-0102 when attempting to play online.")
         embed.add_field(name="What should I do?", value="Please refer to <#317205045819080704>.")
         embed.add_field(name="How do I get unbanned?", value="Nintendo has stated that they will not entertain requests for unban. Server rules prevent us from assisting you in unbanning your console.")
+        await self.bot.say("", embed=embed)
+
+    @commands.command(pass_context=True)
+    async def lumaupdater(self, ctx):
+        """Advisory for users who ran the Luma updater"""
+        await self.bot.delete_message(ctx.message)
+        embed = discord.Embed(title="Help! My console refuses to power on!", color=discord.Color.red())
+        embed.add_field(name="I ran the Luma updater before this happened", value="Updating to Luma3DS 8.0 from any older version **also requires** an update to boot9strap. You have to revert to Luma3DS 7.1, then update B9S.")
+        embed.add_field(name="I did something else", value="If the power light turns on briefly then turns back off, it means that the console could not find `boot.firm` (B9S) or `arm9loaderhax.bin` (A9LH) on your SD card.")
+        embed.add_field(name="How do I fix this?", value="Download [a compatible version](https://cdn.discordapp.com/attachments/196635695958196224/321169284124508161/compatibility_chart.png) of Luma3DS, and copy the appropriate file to the root of the SD card.\n\nFor assistance with updating to B9S 1.2, please refer to [this page](https://3ds.guide/updating-b9s), or ask your question here.")
         await self.bot.say("", embed=embed)
 
 
