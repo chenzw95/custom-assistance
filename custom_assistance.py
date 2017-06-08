@@ -91,8 +91,8 @@ class Assistance:
         embed.add_field(name="How do I get unbanned?", value="Nintendo has stated that they will not entertain requests for unban. Server rules prevent us from assisting you in unbanning your console.")
         await self.bot.say("", embed=embed)
 
-    @commands.command(pass_context=True)
-    async def lumaupdater(self, ctx):
+    @commands.command(pass_context=True, aliases=['lumaupdater'])
+    async def nopoweron(self, ctx):
         """Advisory for users who ran the Luma updater"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Help! My console refuses to power on!", color=discord.Color.red())
