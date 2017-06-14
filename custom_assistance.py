@@ -85,9 +85,9 @@ class Assistance:
         """Ban wave advisory"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="About the ongoing ban wave...", color=discord.Color.red())
-        embed.description = "A ban wave with **unknown cause** is currently ongoing. We will keep you updated (see <#225556031428755456> and <#317205045819080704>) once we obtain more information about this."
+        embed.description = "A ban wave with **unknown cause** is currently ongoing. We will keep you updated (see <#225556031428755456>) once we obtain more information about this."
         embed.add_field(name="What happens if I have been banned?", value="As with all previous console bans, affected consoles will get error 002-0102 when attempting to play online.")
-        embed.add_field(name="What should I do?", value="Please refer to <#317205045819080704>.")
+        embed.add_field(name="What should I do?", value="Please refer to <#225556031428755456>.")
         embed.add_field(name="How do I get unbanned?", value="Nintendo has stated that they will not entertain requests for unban. Server rules prevent us from assisting you in unbanning your console.")
         await self.bot.say("", embed=embed)
 
