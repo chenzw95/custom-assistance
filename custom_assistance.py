@@ -15,7 +15,7 @@ class Assistance:
         await self.bot.say("", embed=embed)
         
     @commands.command(pass_context=True)
-    async def assistance(self, ctx):
+    async def module(self, ctx):
         """Lists information on the module and links to the module"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Chenzw's custom assistance module")
