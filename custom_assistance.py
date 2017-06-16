@@ -13,7 +13,7 @@ class Assistance:
         embed = discord.Embed(title=title, color=color)
         embed.description = text
         await self.bot.say("", embed=embed)
-		
+
     @commands.command(pass_context=True)
     async def lumacfg(self, ctx):
         """Lists options to enable in Luma3DS configuration."""
