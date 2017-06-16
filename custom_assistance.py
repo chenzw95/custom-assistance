@@ -13,6 +13,16 @@ class Assistance:
         embed = discord.Embed(title=title, color=color)
         embed.description = text
         await self.bot.say("", embed=embed)
+		
+    @commands.command(pass_context=True)
+    async def assistance(self, ctx):
+        """Lists information on the module and links to the module"""
+        await self.bot.delete_message(ctx.message)
+        embed = discord.Embed(title="Chenzw's custom assistance module")
+        embed.description = "Thanks for the interest in this module!"
+        embed.add_field(name="What is this for?", value="This module is to help with 3DS Hacking related assistance, primarily for the Nintendo Homebrew server.")
+        embed.add_field(name="Where can I download this?", value="https://github.com/chenzw95/custom-assistance")
+        await self.bot.say("", embed=embed)
 
     @commands.command(pass_context=True)
     async def lumacfg(self, ctx):
@@ -29,7 +39,7 @@ class Assistance:
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Is it safe to update if I have installed CFW already?", color=discord.Color.blue())
         embed.description = "In general, it is safe to update if you have installed CFW. Note, however, that ctr-httpwn has been patched in 11.4."
-        embed.add_field(name="boot9strap", value="Download the [latest compatible version](https://cdn.discordapp.com/attachments/196635695958196224/321169284124508161/compatibility_chart.png) of Luma3DS [manually from GitHub](https://github.com/AuroraWright/Luma3DS/releases) and replace `boot.firm` on the SD card.\nYou should also repeat [section VIII of the guide's last page](https://3ds.guide/finalizing-setup#section-vi---ctrnand-luma3ds) to ensure SD-less boot will work properly.")
+        embed.add_field(name="boot9strap", value="Download the [latest compatible version](https://cdn.discordapp.com/attachments/196635695958196224/321169284124508161/compatibility_chart.png) of Luma3DS [manually from GitHub](https://github.com/AuroraWright/Luma3DS/releases) and replace `boot.firm` on the SD card.\nYou should also repeat [section VI of the guide's last page](https://3ds.guide/finalizing-setup#section-vi---ctrnand-luma3ds) to ensure SD-less boot will work properly. \n\n**NOTE: DO NOT REPLACE THE BOOT.FIRM IF YOU ARE ON B9S 1.0. INSTEAD, PLEASE FOLLOW [THIS GUIDE FIRST](https://3ds.guide/updating-b9s).**")
         embed.add_field(name="arm9loaderhax (deprecated)", value="You should [update to boot9strap](https://3ds.guide/a9lh-to-b9s) first.")
         await self.bot.say("", embed=embed)
 
@@ -58,6 +68,7 @@ class Assistance:
         embed.add_field(name="But I have been hearing this thing about sighax!", value="sighax and boot9strap work in similar ways, but the ordinary end-user **should not** attempt to use the sighax installer.")
         embed.add_field(name="How do I switch from A9LH to B9S?", value="Follow the guide to [update to boot9strap](https://3ds.guide/a9lh-to-b9s).")
         embed.add_field(name="How do I install B9S from stock?", value="Follow [the guide](https://3ds.guide).")
+        embed.add_field(name="How do I update B9S to 1.2 from 1.0?", value="Follow the guide to [update boot9strap](https://3ds.guide/updating-b9s).")
         await self.bot.say("", embed=embed)
 
     @commands.command(pass_context=True)
