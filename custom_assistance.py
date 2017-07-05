@@ -77,7 +77,7 @@ class Assistance:
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Regarding users on stock 11.4 firmware...", color=discord.Color.blue())
         embed.description = "To install CFW on stock 11.4 firmware, the only options available right now are to use a [DSiWare exploit](https://3ds.guide/installing-boot9strap-(dsiware\)) or by [hardmodding the console](https://3ds.guide/installing-boot9strap-(hardmod\))."
-        embed.add_field(name="But these methods are so difficult!", value="You will have to wait for a kernel exploit that works on 11.4 firmware. As ordinary helpers, we cannot tell you when such an exploit will be available.")
+        embed.add_field(name="But these methods are so difficult!", value="You will have to wait for [ntrboothax](https://3ds.guide/installing-boot9strap-(ntrboothax\)) or a kernel exploit that works on 11.4 firmware. As ordinary helpers, we cannot tell you when such an exploit will be available.")
         embed.add_field(name="Can you inform me when such an exploit is available?", value="You should either refer to <#225556031428755456> or [/r/3dshacks](https://www.reddit.com/r/3dshacks).")
         await self.bot.say("", embed=embed)
 
