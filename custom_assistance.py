@@ -13,7 +13,7 @@ class Assistance:
         embed = discord.Embed(title=title, color=color)
         embed.description = text
         await self.bot.say("", embed=embed)
-        
+
     @commands.command(pass_context=True)
     async def module(self, ctx):
         """Lists information on the module and links to the module"""
@@ -23,7 +23,7 @@ class Assistance:
         embed.add_field(name="What is this for?", value="This module is to help with 3DS Hacking related assistance, primarily for the Nintendo Homebrew server.")
         embed.add_field(name="Where can I download this?", value="https://github.com/chenzw95/custom-assistance")
         await self.bot.say("", embed=embed)
-    
+
     @commands.command(pass_context=True)
     async def lumacfg(self, ctx):
         """Lists options to enable in Luma3DS configuration."""
