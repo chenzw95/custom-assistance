@@ -76,8 +76,8 @@ class Assistance:
         """Advisory for users on stock 11.4+ firmware"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Regarding users on stock 11.4+ firmware...", color=discord.Color.blue())
-        embed.description = "To install CFW on stock (unmodified) 11.4+ firmware, the only options available right now are to use a [DSiWare exploit](https://3ds.guide/installing-boot9strap-(dsiware\)) or by [hardmodding the console](https://3ds.guide/installing-boot9strap-(hardmod\)). **Downgrading is not possible.**"
-        embed.add_field(name="But these methods are so difficult!", value="You will have to wait for [ntrboothax](https://3ds.guide/installing-boot9strap-(ntrboothax\)) or a kernel exploit that works on 11.4+ firmware. We cannot tell you when such an exploit will be available. Exploits are expected to be available only after the 3DS reaches end-of-life (EOL) status, which is predicted to be no earlier than 2019.")
+        embed.description = "To install CFW on stock (unmodified) 11.4+ firmware, the only options available right now are to use, [ntrboot](https://3ds.guide/ntrboot) (requires a [compatible flashcart](https://cdn.discordapp.com/attachments/196635745551646720/346032985977389066/cart_list_V1.0.png), a [DSiWare exploit](https://3ds.guide/installing-boot9strap-(dsiware\)) (requires a second console with CFW), or by [hardmodding the console](https://3ds.guide/installing-boot9strap-(hardmod\))."
+        embed.add_field(name="I am unable to use any of the above methods", value="If neither of the above options are an option for you, then you will **not be able** to install custom firmware. **Downgrading is not possible.** More exploits are expected to be available only after the 3DS reaches end-of-life (EOL) status, which is predicted to be no earlier than 2019.")
         embed.add_field(name="Can you inform me when such an exploit is available?", value="You should either refer to <#225556031428755456> or [/r/3dshacks](https://www.reddit.com/r/3dshacks).")
         await self.bot.say("", embed=embed)
 
