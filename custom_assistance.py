@@ -71,7 +71,7 @@ class Assistance:
         embed.add_field(name="How do I update B9S to 1.2 from 1.0?", value="Follow the guide to [update boot9strap](https://3ds.guide/updating-b9s).")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True, aliases=["stock115"])
+    @commands.command(pass_context=True, aliases=["stock115", "stock116"])
     async def stock114(self, ctx):
         """Advisory for users on stock 11.4+ firmware"""
         await ctx.message.delete()
