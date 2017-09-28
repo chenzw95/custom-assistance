@@ -112,6 +112,18 @@ class Assistance:
         embed.add_field(name="How do I fix this?", value="Download [a compatible version](https://cdn.discordapp.com/attachments/196635695958196224/321169284124508161/compatibility_chart.png) of Luma3DS, and copy the appropriate file to the root of the SD card.\n\nFor assistance with updating to B9S 1.2, please refer to [this page](https://3ds.guide/updating-b9s), or ask your question here.")
         await ctx.send(embed=embed)
 
+    @commands.command(aliases=['ntrcfw', 'ntr'])
+    async def bootntr(self, ctx):
+        """Basic instructions for BootNTR selector"""
+        await ctx.message.delete()
+        embed = discord.Embed(title="How do I use NTR CFW?", color=discord.Color.blue())
+        embed.description = "BootNTR **selector** is recommended for launching NTR. It can be downloaded [here](https://github.com/Nanquitas/BootNTR/releases)."
+        embed.add_field(name="N3DS", value="Choose one of the **non-mode3** variants. The choice of banner is purely a matter of preference.")
+        embed.add_field(name="O3DS",
+                        value="Choose the non-mode3 variant. If you intend to use NTR with an extended memory game (eg. Smash, generation VII Pokemon), then you will need the **mode3** variant instead. The choice of banner is purely a matter of preference.")
+        embed.add_field(name="Take note!", value="NTR CFW is not a CFW in itself, and requires Luma3DS to work. Streaming works only from N3DS/N2DS.")
+        await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Assistance(bot))
