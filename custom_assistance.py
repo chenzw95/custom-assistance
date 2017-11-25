@@ -38,9 +38,11 @@ class Assistance:
         """Firmware update advisory (CFW)"""
         await ctx.message.delete()
         embed = discord.Embed(title="Is it safe to update if I have installed CFW already?", color=discord.Color.blue())
-        embed.description = "In general, it is safe to update if you have installed CFW. Note, however, that ctr-httpwn has been patched in 11.4."
-        embed.add_field(name="boot9strap", value="Download the [latest compatible version](https://cdn.discordapp.com/attachments/196635695958196224/321169284124508161/compatibility_chart.png) of Luma3DS [manually from GitHub](https://github.com/AuroraWright/Luma3DS/releases) and replace `boot.firm` on the SD card.\nYou should also repeat [section VI of the guide's last page](https://3ds.guide/finalizing-setup#section-vi---ctrnand-luma3ds) to ensure SD-less boot will work properly. \n\n**NOTE: DO NOT RUN THE LUMA UPDATER OR REPLACE BOOT.FIRM IF YOU ARE ON B9S 1.0. INSTEAD, PLEASE FOLLOW [THIS GUIDE FIRST](https://3ds.guide/updating-b9s).**")
-        embed.add_field(name="arm9loaderhax (deprecated)", value="You should [update to boot9strap](https://3ds.guide/a9lh-to-b9s) first.")
+        embed.description = "That depends on which version of Luma3DS you are running (check this by holding the Select button while powering on):"
+        embed.add_field(name="Luma3DS 8.0 and above (boot9strap 1.2 or newer)", value="You can update the system firmware safely. There is no pressing need to update to the latest Luma3DS, but feel free to do so.")
+        embed.add_field(name="Luma3DS 7.1 (boot9strap 1.0)", value="You can update the system firmware safely. However, it is recommended that you also [update boot9strap](https://3ds.guide/updating-b9s). It does not matter whether you update b9s before or after updating the firmware. Updating b9s will also update Luma3DS automatically.\n\n**NOTE: Do not run the Luma3DS updater or replace `boot.firm` if you are on b9s 1.0. You have to follow [this guide first](https://3ds.guide/updating-b9s) in order to use the newer version of Luma3DS.**")
+        embed.add_field(name="Luma3DS 7.0.5 (arm9loaderhax)", value="Updating the system firmware remains safe, but you should consider [updating to boot9strap](https://3ds.guide/a9lh-to-b9s).")
+        embed.add_field(name="Any other older version", value="Assume that updating is not safe. Either download Luma3DS 7.0.5 and replace `arm9loaderhax.bin` on the SD card, or [update to boot9strap](https://3ds.guide/a9lh-to-b9s).")
         await ctx.send(embed=embed)
 
     @commands.command(pass_context=True)
