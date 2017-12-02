@@ -127,6 +127,20 @@ class Assistance:
         embed.add_field(name="Take note!", value="NTR CFW is not a CFW in itself, and requires Luma3DS to work. Streaming works only from N3DS/N2DS.")
         await ctx.send(embed=embed)
 
+    @commands.command(aliases=['hmtools'])
+    async def hardmodtools(self, ctx):
+        """Tools for hardmodding, as recommended by pbanj"""
+        await ctx.message.delete()
+        embed = discord.Embed(title="Some good cheap shit for a hardmod", color=discord.Color.blue())
+        embed.add_field(name="Screwdrivers", value="Kobalt 18 Piece set [here](https://www.lowes.com/pd/Kobalt-18-Piece-5-in-Multi-Bit-Screwdrivers/4176915#0069826)")
+        embed.add_field(name="SD Card Readers (Works with all systems)", value="Pluggable SuperSpeed [here](https://www.amazon.com/dp/B00E2UTU3W/)\nAnker 8-in-1 [here](https://www.amazon.com/gp/product/B006T9B6R2)", inline=False)
+        embed.add_field(name="Soldering Irons (don't crank the heat or you'll fuck the points up)", value="Vastar Full Set [here](https://www.amazon.com/gp/product/B01712N5C4)")
+        embed.add_field(name="Wires (You can use any wire you want, the jst are more for permanent hardmods", value="Breadboard Tin Plated Copper [here](https://www.amazon.com/Breadboard-B-30-1000-Plated-Copper-Wrapping/dp/B008AGUAII)\n20 Set Mini Micro JST [here](https://www.amazon.com/Micro-Connector-150mm-Cable-Female/dp/B01DUC1S7S/)\n10 Set Lipo Battery Balance Charger JST-XH Connector [here](https://www.amazon.com/Battery-Balance-Charger-JST-XH-Connector/dp/B00REFEOWO)")
+        embed.add_field(name="Flux (Any rosin flux will work. **DON'T USE ACID BASED FLUX**)", value="Rosin Paste Flux [here](https://www.amazon.com/Rosin-Paste-Flux-135-Jar/dp/B008ZIV85A)")
+        embed.add_field(name="Solder", value="BNTECHGO Two Pack [here](https://www.amazon.com/dp/B01H87U76E)")
+        embed.set_author(name="pbanj#9188", icon_url="https://cdn.discordapp.com/avatars/179312738101755916/a_652664e8f3b91a0563de41d23406984c.png?size=1024")
+        await ctx.send(embed=embed)
+        
 
 def setup(bot):
     bot.add_cog(Assistance(bot))
